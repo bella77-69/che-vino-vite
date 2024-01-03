@@ -1,74 +1,87 @@
 import React, { useState, useEffect } from "react";
-import axios from "axios";
-import { Link } from "react-router-dom";
-import ReviewsList from "./ReviewsList";
+import { Link, useParams } from "react-router-dom";
 
-const Reviews = (props) => {
-  const [currentItemsId, setCurrentItemsId] = useState("");
-  const [currentItem, setCurrentItem] = useState({});
-  const [items, setItems] = useState([]);
+function Reviews() {
+  const [services, setServices] = useState([]);
+  const [reviews, setReviews] = useState([]);
+  const { id } = useParams();
 
   useEffect(() => {
-    axios.get("http://localhost:5000/wines/review")
-      .then((res) => {
-        setItems(res.data);
-      })
-      .catch((err) => {
-        console.error(err);
+    fetch(`http://localhost:5000/wines/review/${id}`)
+      .then((res) => res.json())
+      .then((result) => {
+        setServices(result);
+        console.log(result);
       });
-  }, []);
+  }, [id]);
 
-//   useEffect(() => {
-//     if (props.match && props.match.params && props.match.params.id) {
-//       const id = props.match.params.id || (items[0] && items[0].id);
- 
-//       if (id) {
-//         axios.get(`http://localhost:5000/wines/review/${id}`)
-//           .then((res) => {
-//             setCurrentItemsId(res.data[0]?.id);
-//             setCurrentItem(res.data[0]);
-//           })
-//           .catch((err) => {
-//             console.error(err);
-//           });
-//       }
-//     }
-//   }, [props.match.params.id, items]);
-
-  const handleSubmit = (id, e) => {
-    e.preventDefault();
-    axios.get(`http://localhost:5000/wines/review/${id}`)
-      .then((res) => {
-        setCurrentItemsId(res.data[0].id);
-        window.location.href = `/reviews/${id}`;
-      })
-      .catch((err) => {
-        console.error(err);
+  useEffect(() => {
+    fetch(`http://localhost:5000/wines/comments/${id}`)
+      .then((res) => res.json())
+      .then((result) => {
+        setReviews(result);
+        console.log(result);
       });
-  };
+  }, [id]);
 
   return (
-    <section className="wine dark:bg-[#5f1219]">
-      <div className="d-flex justify-content-center container">
-        <div className="card p-3 text-white">
-          <div className="about-product">
-            {items.map((item, index) => (
-              <div className="mt-0 mt-4" key={index}>
-                <img className="pl-3" src={item.image} width="100" alt="wine-img" />
-                <h4 className="card-title mt-4 mx-3">{item.wine}</h4>
-                <h5 className="card-subtitle mx-3 mt-2">{item.style}</h5>
-                <h5 className="card-subtitle mx-3 mt-2">{item.price}</h5>
-                <h5 className="card-subtitle mx-3 mt-2 text-muted font-italic">{item.review}</h5>
-                <p className="card-text p-y-1 mx-3 mt-2">Rating: {item.rating}</p>
-                <button className="btn mx-3 mt-2 border-dark" onClick={(e) => handleSubmit(item.id, e)}>
-                  <Link to={`/comments/${item.id}`} className="card-link">More Info</Link>
-                </button>
+    <section className="wine dark:bg-[#343434] text-white">
+      <div className="container py-5">
+        <div className="col-lg-7 mx-auto ">
+          {/* <Title title="Wine Reviews" /> */}
+        </div>
+
+        <div className="media align-items-lg-center flex-column flex-lg-row p-3">
+          {services.map((service, index) => (
+            <div
+              className="media-body order-2 order-lg-1 d-flex flex-column align-items-center"
+              key={`service-${service.id || index}`}
+            >
+              <h5 className="mt-0 font-weight-bold mb-2 ">{service.wine}</h5>
+              <img
+                src={service.image}
+                alt="wine-pic"
+                width="150"
+                className="mt-3"
+              />
+              <h5 className="card-subtitle mt-3">{service.style}</h5>
+              <h5 className="card-subtitle  mt-2">{service.price}</h5>
+              <p className="card-text p-y-1 mt-2">Rating: {service.rating}</p>
+              <h5 className="card-subtitle mx-3 mt-2">{service.review}</h5>
+              <div className="d-flex justify-content-center mt-4">
+                <span className="font-weight-bold">Reviews</span>
               </div>
-            ))}
-          </div>
+
+              {reviews.map((review, index) => (
+                <article
+                  className="container py-4"
+                  key={`review-${review.id || index}`}
+                >
+                  <div className="img-container">
+                    <img src="" alt="" id="img" />
+                    <i className="fas fa-quote-right"></i>
+                  </div>
+                  <p id="author">{review.comment_name}</p>
+                  <p id="job">{review.comment_date}</p>
+                  <p id="info">{review.comment_text}</p>
+                </article>
+              ))}
+              <button className="btn mx-2">
+                <Link to={"/leave_review/" + service.id} className="list-link">
+                  Leave a Review
+                </Link>
+              </button>
+              <button className="btn mx-2">
+                <Link to="/">Back to Homepage</Link>
+              </button>
+
+              <button className="btn">
+                <Link to="/reviews">Back to Wine Page</Link>
+              </button>
+            </div>
+          ))}
         </div>
       </div>
-      <ReviewsList items={items} currentItem={currentItem} currentItemsId={currentItemsId}/>
     </section>
   );
 }

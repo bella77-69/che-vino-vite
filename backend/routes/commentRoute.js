@@ -6,13 +6,13 @@ const commentController = require("../controllers/comment.controller");
 //get all comments
 router.get("/", commentController.getAllComments);
 
-// get comment by ID
-router.get("/:id", commentController.getCommentByID);
+// get comment by comment_id
+router.get("/:id", commentController.getByCommentId);
 
-// get name for Update
-router.get("/comments/:commentid", commentController.getByCommentId);
+//get comments by review_id
+router.get("/comment/:id", commentController.getByCommentsid);
 
-// create new comment
+// create new comment usiang the comment_id
 router.post("/", commentController.createNewComment);
 
 // update comment
