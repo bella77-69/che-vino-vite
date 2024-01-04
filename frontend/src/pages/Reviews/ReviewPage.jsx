@@ -49,156 +49,47 @@ const ReviewPage = () => {
   };
 
   return (
-    // <section className="wine dark:bg-[#343434]">
-    //   <div className="d-flex justify-content-center container">
-    //     <div className="card p-3 text-white">
-    //       <div className="about-product">
-    //         {items.map((item) => (
-    //           <div className="mt-0 mt-4" key={item.id}>
-    //             {/* {currentItem.id === item.id && (
-    //               <ReviewsList items={items} listId={item.id} />
-    //             )} */}
-    //             <img
-    //               className="pl-3"
-    //               src={item.image}
-    //               width="100"
-    //               alt="wine-img"
-    //             />
-
-    //             <h4 className="card-title mt-4 mx-3">{item.wine}</h4>
-    //             <h5 className="card-subtitle mx-3 mt-2">{item.style}</h5>
-    //             <h5 className="card-subtitle mx-3 mt-2">{item.price}</h5>
-    //             <h5 className="card-subtitle mx-3 mt-2 text-muted font-italic">
-    //               {item.review}
-    //             </h5>
-    //             <p className="card-text p-y-1 mx-3 mt-2">
-    //               Rating: {item.rating}
-    //             </p>
-    //             <button
-    //               className="btn mx-3 mt-2 border-dark"
-    //               onClick={(e) => handleSubmit(item.id, e)}
-    //             >
-    //               <Link to={`/comments/${item.id}`} className="card-link">
-    //                 More Info
-    //               </Link>
-    //             </button>
-    //           </div>
-    //         ))}
-    //       </div>
-    //     </div>
-    //   </div>
-    // </section>
-    <section class="flex items-center bg-gray-200 min-h-screen font-poppins dark:bg-gray-900 w-full">
-      <div class="justify-center max-w-6xl px-4 py-4 mx-auto lg:py-0">
-        <div class="grid grid-cols-1 gap-6 lg:grid-cols-3 md:grid-cols-2">
-          {items.map((item) => (
-            <div
-              class="relative bg-white rounded-2xl dark:bg-gray-700"
-              key={item.id}
-            >
-              <div class="w-full h-56 px-4 pt-4">
-                <img
-                  src={item.image}
-                  alt=""
-                  class="object-cover w-full h-full rounded-lg "
-                />
-              </div>
-              <div>
-                <div class="p-4">
-                  <div class="mb-3">
-                    <a href="">
-                      <h2 class="text-2xl font-semibold dark:text-gray-300">
-                        {item.wine}
-                      </h2>
-                    </a>
-                  </div>
-                  <p class="pb-16 text-base font-base text-gray-700 dark:text-gray-400">
-                    {item.review}
-                  </p>
-                  <h6 className="card-subtitle mx-3 mt-2">{item.style}</h6>
-                  <h6 className="card-subtitle mx-3 mt-2">{item.price}</h6>
-                  <p className="card-text p-y-1 mx-3 mt-2">
-                    Rating: {item.rating}
-                  </p>
-                </div>
-                <div class="flex items-center justify-end ">
-                  <button
-                    onClick={(e) => handleSubmit(item.id, e)}
-                    class="absolute bottom-0 right-0 px-3 py-4 text-sm text-gray-100 bg-indigo-600 rounded-tl-2xl rounded-br-2xl hover:bg-indigo-700 hover:text-gray-100"
-                  >
-                    <Link to={`/comments/${item.id}`} className="card-link">
-                      More Info
-                    </Link>
-                  </button>
-                </div>
-              </div>
-            </div>
-          ))}
-          <div class="relative bg-white rounded-2xl dark:bg-gray-700">
-            <div class="w-full h-56 px-4 pt-4 ">
-              <img
-                src="https://i.postimg.cc/s2tvtrPF/first.jpg"
-                alt=""
-                class="object-cover w-full h-full rounded-lg "
-              />
-            </div>
-            <div>
-              <div class="p-4">
-                <div class="mb-3">
-                  <a href="">
-                    <h2 class="text-2xl font-semibold dark:text-gray-300">
-                      Lorem ipsum dor amet ispiciousas
-                    </h2>
-                  </a>
-                </div>
-                <p class="pb-16 text-base font-base text-gray-700 dark:text-gray-400">
-                  We will take you different places of nepal and will translate
-                  japanese to english entertain ...
-                </p>
-              </div>
-              <div class="flex items-center justify-end ">
+    <section className="dark:bg-[#343434] px-4 py-8 md:px-10 md:py-20 w-full">
+       <div className="container px-5 mx-auto flex flex-wrap justify-center">
+        {items.map((item) => (
+          <div key={item.id} className="flex flex-col overflow-hidden rounded sm:flex-row text-slate-500 shadow-slate-200 mt-4 p-8">
+            
+            <div className="flex-1 p-2 sm:mx-6 sm:px-0">
+              <header className="flex flex-col md:flex-row gap-4 mb-4">
                 <a
-                  href="#"
-                  class="absolute bottom-0 right-0 px-3 py-4 text-sm text-gray-100 bg-indigo-600 rounded-tl-2xl rounded-br-2xl hover:bg-indigo-700 hover:text-gray-100"
+                  href="/"
+                  className="inline-flex justify-center w-20 h-30 rounded-full"
                 >
-                  Find out more
+                  <img
+                    src={item.image}
+                    alt={item.wine}
+                    width="70"
+                    height="50"
+                    className="max-w-full rounded-full"
+                  />
                 </a>
-              </div>
+                <div>
+                  <h3 className="text-xl font-medium text-white">
+                    {" "}
+                    {item.wine}
+                  </h3>
+                  <p className="text-sm text-[#f9f9f9]"> {item.price}</p>
+                  <p className="text-sm text-[#f9f9f9]">{item.style}</p>
+                </div>
+              </header>
+              <p className="text-white">{item.review}</p>
+              <p className="pt-2 text-sm text-[#f9f9f9]">Rating: {item.rating}</p> 
+              <button
+                className="mt-2 inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide text-black transition duration-300 rounded-full focus-visible:outline-none whitespace-nowrap bg-[#7c7c7c] hover:bg-[#c9c9c9] focus:bg-[#7c7c7c] disabled:cursor-not-allowed disabled:border-[#c00414] disabled:bg-[#3c3c3c] disabled:shadow-none"
+                onClick={(e) => handleSubmit(item.id, e)}
+              >
+                <Link to={`/reviews/${item.id}`} className="card-link">
+                  More Info
+                </Link>
+              </button>
             </div>
           </div>
-          <div class="relative bg-white rounded-2xl dark:bg-gray-700">
-            <div class="w-full h-56 px-4 pt-4 ">
-              <img
-                src="https://i.postimg.cc/Qdhgyp8g/second.jpg"
-                alt=""
-                class="object-cover w-full h-full rounded-lg "
-              />
-            </div>
-            <div>
-              <div class="p-4">
-                <div class="mb-3">
-                  <a href="">
-                    <h2 class="text-2xl font-semibold dark:text-gray-300">
-                      Lorem ipsum dor amet ispiciousas
-                    </h2>
-                  </a>
-                </div>
-                <p class="pb-16 text-base font-base text-gray-700 dark:text-gray-400">
-                  We will take you different places of nepal and will translate
-                  japanese to english entertain ...
-                </p>
-              </div>
-              <div class="flex items-center justify-end ">
-                <a
-                  href="#"
-                  class="absolute bottom-0 right-0 px-3 py-4 text-sm text-gray-100 bg-indigo-600 rounded-tl-2xl rounded-br-2xl hover:bg-indigo-700 hover:text-gray-100"
-                >
-                  Find out more
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
+        ))}
       </div>
     </section>
   );
