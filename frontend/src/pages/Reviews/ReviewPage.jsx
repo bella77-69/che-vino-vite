@@ -50,10 +50,12 @@ const ReviewPage = () => {
 
   return (
     <section className="dark:bg-[#343434] px-4 py-8 md:px-10 md:py-20 w-full">
-       <div className="container px-5 mx-auto flex flex-wrap justify-center">
+      <div className="container px-5 mx-auto flex flex-wrap justify-center">
         {items.map((item) => (
-          <div key={item.id} className="flex flex-col overflow-hidden rounded sm:flex-row text-slate-500 shadow-slate-200 mt-4 p-8">
-            
+          <div
+            key={item.id}
+            className="flex flex-col overflow-hidden rounded sm:flex-row text-slate-500 shadow-slate-200 mt-4 p-8"
+          >
             <div className="flex-1 p-2 sm:mx-6 sm:px-0">
               <header className="flex flex-col md:flex-row gap-4 mb-4">
                 <a
@@ -75,12 +77,15 @@ const ReviewPage = () => {
                   </h3>
                   <p className="text-sm text-[#f9f9f9]"> {item.price}</p>
                   <p className="text-sm text-[#f9f9f9]">{item.style}</p>
+                  <p className="pt-2 text-sm text-[#f9f9f9]">
+                    Rating: {item.rating}
+                  </p>
                 </div>
               </header>
               <p className="text-white">{item.review}</p>
-              <p className="pt-2 text-sm text-[#f9f9f9]">Rating: {item.rating}</p> 
+
               <button
-                className="mt-2 inline-flex items-center justify-center h-12 gap-2 px-6 text-sm font-medium tracking-wide text-black transition duration-300 rounded-full focus-visible:outline-none whitespace-nowrap bg-[#7c7c7c] hover:bg-[#c9c9c9] focus:bg-[#7c7c7c] disabled:cursor-not-allowed disabled:border-[#c00414] disabled:bg-[#3c3c3c] disabled:shadow-none"
+                className="mt-2 inline-flex items-center justify-center h-12 gap-2 px-4 md:px-6 text-sm md:text-base font-medium tracking-wide text-black transition duration-300 rounded-full focus-visible:outline-none whitespace-nowrap bg-[#7c7c7c] hover:bg-[#c9c9c9] focus:bg-[#7c7c7c] disabled:cursor-not-allowed disabled:border-[#c00414] disabled:bg-[#3c3c3c] disabled:shadow-none"
                 onClick={(e) => handleSubmit(item.id, e)}
               >
                 <Link to={`/reviews/${item.id}`} className="card-link">
