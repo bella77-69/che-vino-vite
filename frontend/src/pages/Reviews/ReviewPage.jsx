@@ -49,7 +49,7 @@ const ReviewPage = () => {
   };
 
   return (
-    <section className="dark:bg-[#343434] px-4 py-8 md:px-10 md:py-20 w-full">
+    <section className="bg-gray-900 text-white px-4 py-8 md:px-10 md:py-20 w-full">
       <div className="container px-5 mx-auto flex flex-wrap justify-center">
         {items.map((item) => (
           <div
@@ -59,7 +59,7 @@ const ReviewPage = () => {
             <div className="flex-1 p-2 sm:mx-6 sm:px-0">
               <header className="flex flex-col md:flex-row gap-4 mb-4">
                 <a
-                  href="/"
+                  href="#"
                   className="inline-flex justify-center w-20 h-30 rounded-full"
                 >
                   <img
@@ -85,7 +85,7 @@ const ReviewPage = () => {
               <p className="text-white">{item.review}</p>
 
               <button
-                className="mt-2 inline-flex items-center justify-center h-12 gap-2 px-4 md:px-6 text-sm md:text-base font-medium tracking-wide text-black transition duration-300 rounded-full focus-visible:outline-none whitespace-nowrap bg-[#7c7c7c] hover:bg-[#c9c9c9] focus:bg-[#7c7c7c] disabled:cursor-not-allowed disabled:border-[#c00414] disabled:bg-[#3c3c3c] disabled:shadow-none"
+                 className="mt-2 inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
                 onClick={(e) => handleSubmit(item.id, e)}
               >
                 <Link to={`/reviews/${item.id}`} className="card-link">

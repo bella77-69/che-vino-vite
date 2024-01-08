@@ -43,7 +43,7 @@ export default function ContactPage() {
   };
 
   return (
-    <div className="wine dark:bg-[#5f1219]">
+    <div className="bg-gray-900 text-white">
       <div className="container">
         <div className="text-center">
           <p className="form-subtitle">

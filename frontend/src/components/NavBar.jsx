@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import logo from "../assets/images/logo8.png";
 
 const Navbar = () => {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
@@ -19,16 +18,9 @@ const Navbar = () => {
         {" "}
         <a href="/" className="flex items-center space-x-4 rtl:space-x-reverse">
           {" "}
-          {/* <img
-            src={logo}
-            className="h-8 md:h-10"
-            alt="Flowbite Logo"
-            width={100} 
-            height={150} 
-          /> */}
           <span className="self-center text-xl md:text-2xl font-semibold whitespace-nowrap dark:text-white">
-          Che Vino
-        </span>
+            Che Vino
+          </span>
         </a>
         <button
           data-collapse-toggle="navbar-dropdown"
@@ -55,6 +47,13 @@ const Navbar = () => {
             />
           </svg>
         </button>
+        {/* <div
+          className={`${
+            isDropdownOpen ? "block" : "hidden"
+          } w-full md:block md:w-auto`}
+          id="navbar-dropdown"
+        >
+          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 "> */}
         <div
           className={`${
             isDropdownOpen ? "block" : "hidden"
@@ -100,7 +99,7 @@ const Navbar = () => {
               <button
                 id="dropdownNavbarLink"
                 type="button"
-                className="flex items-center justify-between w-full py-2 px-3 text-gray-900 rounded hover:bg-[#CD0617] md:hover:bg-transparent md:border-0 md:dark:hover:text-[#CD0617] md:p-0 md:w-auto dark:text-white md:dark:hover:text-blue-500 dark:focus:text-white dark:border-gray-700 dark:hover:bg-[#CD0617] md:dark:hover:bg-transparent"
+                className="flex items-center w-full py-2 px-3 text-gray-900 rounded hover:bg-[#CD0617] md:hover:bg-transparent md:border-0 md:dark:hover:text-[#CD0617] md:p-0 md:w-auto dark:text-white  dark:focus:text-white dark:border-gray-700 dark:hover:bg-[#CD0617] md:dark:hover:bg-transparent"
                 onClick={toggleWineDropdown}
               >
                 Wine Generator{" "}
@@ -125,7 +124,7 @@ const Navbar = () => {
                 id="wineDropdownNavbar"
                 className={`${
                   isWineDropdownOpen ? "block" : "hidden"
-                } z-10 absolute w-40 divide-y divide-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-white dark:text-white dark:hover:bg-[#1A1A1A] dark:focus:ring-gray-600 `}
+                } z-10 absolute w-40 divide-y divide-gray-100 rounded-md focus:outline-none focus:ring-2 focus:ring-white bg-[#000000] hover:bg-[#000000] dark:text-white dark:focus:ring-gray-600 `}
               >
                 <ul
                   className="py-2 text-sm text-gray-700 dark:text-gray-400"

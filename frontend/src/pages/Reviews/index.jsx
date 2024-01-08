@@ -25,7 +25,7 @@ function Reviews() {
   }, [id]);
 
   return (
-    <section className="dark:bg-[#343434] px-4 py-8 md:px-10 md:py-20 w-full">
+    <section className="bg-gray-900 text-white px-4 py-8 md:px-10 md:py-20 w-full">
       <div className="py-8">
         {services.map((service, index) => (
           <div
@@ -43,7 +43,7 @@ function Reviews() {
                 </div>
                 <div className="flex flex-col md:flex-row -mx-2 mb-4">
                   <div className="w-full md:w-1/2 px-2 mb-2 md:mb-0">
-                    <button className="w-full bg-gray-900 dark:bg-gray-600 text-white py-2 px-4 md:px-8 rounded-full font-bold hover:bg-gray-800 dark:hover:bg-gray-700">
+                    <button  className="w-full inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                       <Link
                         to={"/leave_review/" + service.id}
                         className="list-link"
@@ -53,7 +53,7 @@ function Reviews() {
                     </button>
                   </div>
                   <div className="w-full md:w-1/2 px-2">
-                    <button className="w-full bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-white py-2 px-4 md:px-8 rounded-full font-bold hover:bg-gray-300 dark:hover:bg-gray-600">
+                    <button  className="w-full inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800">
                       <Link to="/reviews">Back to Wine Page</Link>
                     </button>
                   </div>
