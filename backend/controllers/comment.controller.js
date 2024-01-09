@@ -1,13 +1,9 @@
-const exp = require("constants");
 const CommentsModel = require("../models/comments.model");
 
 // get all comments
 exports.getAllComments = (req, res) => {
-  //console.log('here all users list');
   CommentsModel.getAllComments((err, user) => {
-    // console.log("We are here");
     if (err) res.send(err);
-    //console.log("user", user);
     res.send(user);
   });
 };

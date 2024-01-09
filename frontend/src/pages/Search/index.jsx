@@ -29,21 +29,24 @@ export default function SearchPage() {
       <div className="container mx-auto">
         <h2 className="text-4xl font-bold mb-10">Search Wines</h2>
 
-        <form className="mb-12" onSubmit={(e) => {
-  e.preventDefault(); 
-}}>
+        <form
+          className="mb-12"
+          onSubmit={(e) => {
+            e.preventDefault();
+          }}
+        >
           <label htmlFor="search" className="sr-only">
             Search by Year
           </label>
           <div className="relative">
-          <input
-  type="search"
-  id="search"
-  onChange={handleSearch}
-  className="block w-full px-4 py-3 text-sm text-gray-900 placeholder-gray-500 bg-white rounded-lg focus:ring-2 focus:ring-blue-500 border border-gray-300 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:border-gray-600"
-  placeholder="Search By Year..."
-  required
-/>
+            <input
+              type="search"
+              id="search"
+              onChange={handleSearch}
+              className="block w-full px-4 py-3 text-sm text-gray-900 placeholder-gray-500 bg-white rounded-lg focus:ring-2 focus:ring-blue-500 border border-gray-300 dark:bg-gray-800 dark:text-white dark:placeholder-gray-400 dark:focus:ring-blue-500 dark:border-gray-600"
+              placeholder="Search By Year..."
+              required
+            />
             <button
               type="submit"
               className="absolute right-3 top-1/2 transform -translate-y-1/2 text-white bg-blue-700 hover:bg-blue-800 focus:ring-2 focus:ring-blue-300 rounded-lg px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
@@ -59,7 +62,7 @@ export default function SearchPage() {
               key={value.id}
               className="flex flex-col items-center justify-between bg-white rounded-lg shadow-md dark:bg-gray-800"
             >
-              <a href="#!" className="pt-2">
+              <a href="#" className="pt-2">
                 <img
                   className="rounded-t-lg w-32 h-32 object-contain"
                   src={value.image}

@@ -1,4 +1,5 @@
 import React from "react";
+import TopButton from "./TopButton";
 
 const Footer = () => {
   return (
@@ -113,6 +114,7 @@ const Footer = () => {
           <p>&copy; 2023 Che Vino. All rights reserved.</p>
         </div>
       </div>
+      <TopButton />
     </footer>
   );
 };

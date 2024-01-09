@@ -3,11 +3,11 @@ import logo from "../assets/images/logo8.png";
 
 const Hero = () => {
   return (
-    <section className="bg-gray-900 text-white">
+    <section className="bg-gray-800 text-white">
       <div className="grid max-w-screen-xl px-4 py-8 mx-auto lg:gap-8 xl:gap-0 lg:py-16 lg:grid-cols-12">
         <div className="mr-auto place-self-center lg:col-span-7">
           <h1 className="max-w-2xl mb-4 text-4xl font-extrabold tracking-tight leading-none md:text-5xl xl:text-6xl dark:text-[#ffffff]">
-          Discover Exceptional Wines with Che Vino
+            Discover Exceptional Wines with Che Vino
           </h1>
           <p className="max-w-2xl mb-6 font-light text-[#efe7e8] lg:mb-8 md:text-lg lg:text-xl dark:text-[#efe7e8]">
             Discover wines with ease using Che Vino! Randomly select from Red,
@@ -35,13 +35,13 @@ const Hero = () => {
           </a> */}
           <a
             href="/contact"
-            className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+            className="inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-800"
           >
             Contact Us
           </a>
         </div>
         <div className="pt-12 sm:pt-10 lg:mt-0 lg:col-span-5 lg:flex">
-          <img src={logo} alt="che vino logo" className="rounded-lg"/>
+          <img src={logo} alt="che vino logo" className="rounded-lg" />
         </div>
       </div>
     </section>

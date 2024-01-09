@@ -49,7 +49,7 @@ const ReviewPage = () => {
   };
 
   return (
-    <section className="bg-gray-900 text-white px-4 py-8 md:px-10 md:py-20 w-full">
+    <section className="bg-gray-800 text-white px-4 py-8 md:px-10 md:py-20 w-full">
       <div className="container px-5 mx-auto flex flex-wrap justify-center">
         {items.map((item) => (
           <div
@@ -85,7 +85,7 @@ const ReviewPage = () => {
               <p className="text-white">{item.review}</p>
 
               <button
-                 className="mt-2 inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-700 dark:focus:ring-gray-800"
+                 className="mt-2 inline-flex items-center justify-center px-5 py-3 text-base font-medium text-center text-gray-900 border border-gray-300 rounded-lg hover:bg-gray-100 focus:ring-4 focus:ring-gray-100 dark:text-white dark:border-gray-700 dark:hover:bg-gray-600 dark:focus:ring-gray-800"
                 onClick={(e) => handleSubmit(item.id, e)}
               >
                 <Link to={`/reviews/${item.id}`} className="card-link">
