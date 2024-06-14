@@ -28,7 +28,7 @@ export default function ContactPage() {
     };
 
     axios
-      .put(`http://localhost:5000/wines/comments/{id}`, data)
+      .put(`http://localhost:5000/wines/comments/comments/{id}`, data)
       .then((response) => {
         if (response.status === 200) {
           setContact((prevState) => ({
