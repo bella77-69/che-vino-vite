@@ -16,7 +16,6 @@ const contactRoute = require('./routes/contactRoute');
 
 app.use(express.json());
 app.use(cors());
-//parse request data content
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
