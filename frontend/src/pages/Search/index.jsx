@@ -76,6 +76,9 @@ export default function SearchPage() {
                 <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
                   {value.winery}
                 </p>
+                <p className="mb-4 text-base text-neutral-600 dark:text-neutral-200">
+                  {value.type}
+                </p>
               </div>
               <div className="w-full flex flex-col lg:flex-row lg:justify-between border-t border-neutral-100 px-6 py-3 dark:border-neutral-600 dark:text-neutral-50">
                 <small>Average Rating: {value.average}</small>

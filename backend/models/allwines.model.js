@@ -11,7 +11,7 @@ const AllWines = function (all) {
 
 //get all wines
 AllWines.getAllWines = (result) => {
-  dbConn.query("SELECT * FROM allwines", (err, res) => {
+  dbConn.query("SELECT * FROM all_wines", (err, res) => {
     if (err) {
       console.log("Error while fetching allwines", err);
       result(null, err);
@@ -23,14 +23,14 @@ AllWines.getAllWines = (result) => {
 };
 
 
-//get wine by winery
-AllWines.getWineByWinery = (winery, result) => {
+//get wine by type
+AllWines.getWineByType = (type, result) => {
   dbConn.query(
-    "SELECT * FROM allwines WHERE winery = ?",
-    winery,
+    "SELECT * FROM all_wines WHERE type = ?",
+    type,
     (err, res) => {
       if (err) {
-       console.log("Error while fetching data by winery", err);
+       console.log("Error while fetching data by type", err);
         result(null, err);
       } else {
         result(null, res);
@@ -42,7 +42,7 @@ AllWines.getWineByWinery = (winery, result) => {
   // create new wine
   AllWines.createNewWine = (allWinesReqData, result) => {
     dbConn.query(
-      "INSERT INTO allwines SET ?",
+      "INSERT INTO all_wines SET ?",
       allWinesReqData,
       (err, res) => {
         if (err) {
@@ -57,7 +57,7 @@ AllWines.getWineByWinery = (winery, result) => {
   };
   //get wine by ID for update
   AllWines.getWineByID = (id, result) => {
-    dbConn.query("SELECT * FROM allwines WHERE id=?", id, (err, res) => {
+    dbConn.query("SELECT * FROM all_wines WHERE id=?", id, (err, res) => {
       if (err) {
         console.log("Error while fetching wine by id", err);
         result(null, err);
@@ -70,7 +70,7 @@ AllWines.getWineByWinery = (winery, result) => {
   //update wine
  AllWines.updateWine = (id, allwinesReqData, result) => {
     dbConn.query(
-      "UPDATE allwines SET winery=?, wine=?, rating=?, location=?  WHERE id = ?",
+      "UPDATE all_wines SET winery=?, wine=?, rating=?, location=?  WHERE id = ?",
       [allwinesReqData.winery, allwinesReqData.wine, allwinesReqData.rating, allwinesReqData.location, id],
       (err, res) => {
         if (err) {
@@ -86,7 +86,7 @@ AllWines.getWineByWinery = (winery, result) => {
   
   //delete wine
   AllWines.deleteWine = (id, result) => {
-    dbConn.query("DELETE from allwines WHERE id=?", [id], (err, res) => {
+    dbConn.query("DELETE from all_wines WHERE id=?", [id], (err, res) => {
       if (err) {
         console.log("Error while deleting the wine");
         result(null, err);

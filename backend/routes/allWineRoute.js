@@ -3,22 +3,22 @@ const router = express.Router();
 
 const allwinesController = require("../controllers/allwines.controller");
 
-//get all records
+//get all wines
 router.get("/", allwinesController.getAllWines);
 
-// get user by ID
+// get wine by ID
 router.get("/:id", allwinesController.getWineByID);
 
-// get ID for Update
-router.get("/search/:winery", allwinesController.getWineByWinery);
+// get wine by type
+router.get("/search/:type", allwinesController.getWineByType);
 
-// create new user
+// create new wine
 router.post("/", allwinesController.createNewWine);
 
-// update user
+// update wine
 router.put("/:id", allwinesController.updateWine);
 
-// delete user
+// delete wine
 router.delete("/:id", allwinesController.deleteWine);
 
 module.exports = router;

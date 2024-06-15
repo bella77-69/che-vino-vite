@@ -16,25 +16,23 @@ import Reviews from "./pages/Reviews";
 import ReviewPage from "./pages/Reviews/ReviewPage";
 import LeaveReview from "./pages/Reviews/LeaveReview";
 
-
 function App() {
   return (
     <BrowserRouter>
       <Navbar />
       <Routes>
         <Route path="/" element={<Hero />} />
-        <Route path='/contact' element={<Contact />} />
-        <Route path='/search' element={<Search />} />
-        <Route path='/reviews' element={<ReviewPage />} />
-        <Route path='/reviews/:id' element={<Reviews />} />
-        <Route path='/leave_review/:id' element={<LeaveReview />} />
-        <Route path='/wines/red' element={<Red />} />
-        <Route path='/wines/white' element={<White />} />
-        <Route path='/wines/sparkling' element={<Sparkling />} />
-        <Route path='/wines/rose' element={<Rose />} />
-        <Route path='/wines/port' element={<Port />} />
-        <Route path='/wines/dessert' element={<Dessert />} />
-
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/search" element={<Search />} />
+        <Route path="/reviews" element={<ReviewPage />} />
+        <Route path="/reviews/:id" element={<Reviews />} />
+        <Route path="/leave_review/:id" element={<LeaveReview />} />
+        <Route path="/wines/red" element={<Red />} />
+        <Route path="/wines/white" element={<White />} />
+        <Route path="/wines/sparkling" element={<Sparkling />} />
+        <Route path="/wines/rose" element={<Rose />} />
+        <Route path="/wines/port" element={<Port />} />
+        <Route path="/wines/dessert" element={<Dessert />} />
       </Routes>
       <Footer />
     </BrowserRouter>

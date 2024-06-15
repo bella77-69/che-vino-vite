@@ -19,14 +19,7 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
 
-//create inventory/admin routs
-// app.use("/guest", (req, res) => {res.send({token: 'test123'})}, guestRoutes);
-app.use('/wines/reds', redRoute);
-app.use('/wines/whites', whiteRoute);
-app.use('/wines/dessert', dessertRoute);
-app.use('/wines/port', portRoute);
-app.use('/wines/rose', roseRoute);
-app.use('/wines/sparkling', sparklingRoute);
+
 app.use('/wines/review', reviewRoute);
 app.use('/wines/comments', commentRoute);
 app.use('/wines/all', allWineRoute);

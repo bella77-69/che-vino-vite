@@ -8,9 +8,9 @@ exports.getAllWines = (req, res) => {
   });
 };
 
-// get wine by winery
-exports.getWineByWinery = (req, res) => {
-  AllWinesModel.getWineByWinery(req.params.winery, (err, user) => {
+// get wine by type
+exports.getWineByType = (req, res) => {
+  AllWinesModel.getWineByType(req.params.type, (err, user) => {
     if (err) res.send(err);
    // console.log("single email user data", user);
     res.send(user);
